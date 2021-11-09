@@ -27,10 +27,8 @@ Users will be able to:
 
 ### Screenshot
 
-![Desktop](./images/desktop.png)
-![Desktop Menu](./images/desktop-menu.png)
-![Desktop](./images/mobile.png)
-![Desktop Menu](./images/mobile-menu.png)
+![Home](moonBase-home.png)
+![Mission](moonBase-mission.png)
 
 ### Links
 
