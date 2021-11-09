@@ -1,6 +1,6 @@
 - Customize the h1 inside the header:
 
-Using font-size property inside header is confusing
+Using font-size property for header is confusing
 
 ```css
 header {
