@@ -1,16 +1,12 @@
-# title(){return this.options.title||this.options.name}
-
-## Supporting Scrimba
-
-Since 2017, we have created over 20 free courses on Scrimba, and we're going to
-continue launching free courses. But to pay our bills, we have to charge once
-in a while. So if you've ever wanted to "give back" to Scrimba, you can do that by buying
-	one of our paid courses
-
-- [Become a professional React developer](https://scrimba.com/course/greact)
-- [The Responsive Web Design Bootcamp](https://scrimba.com/course/gresponsive)
-- [The Ultimate JavaScript Bootcamp](https://scrimba.com/course/gjavascript)
-
-	It would also mean the world to us if you share the courses.  
-
-Happy Coding!
+- Use class instead of h2 is for easier maintenance in the future
+- class can be used for other things like footer for example. And who knows? Maybe we will use an h2 that isn't a subheading
+```css
+.subheading {
+    color: #FCD801;
+    background-color: #281B2D;
+    font-size: 48px;
+    border-bottom: 5px solid #00C54C;
+    padding: 15px 20px;
+    font-family: sans-serif;
+}
+```
