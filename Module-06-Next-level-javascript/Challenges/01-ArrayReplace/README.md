@@ -1,3 +1,4 @@
+For of loop won't work in this situation, better to go with a dimple for loop
 ```
 function arrayReplace(array, elemToReplace, substitutionElem) {
     //  write code here.
