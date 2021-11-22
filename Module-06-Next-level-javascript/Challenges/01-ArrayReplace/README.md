@@ -1,16 +1,34 @@
-# title(){return this.options.title||this.options.name}
+```
+function arrayReplace(array, elemToReplace, substitutionElem) {
+    //  write code here.
+    for(let i=0;i<array.length;i++){
+        if(array[i]===elemToReplace){
+            array[i]=substitutionElem
+        }
+    }
+    return array
+}
 
-## Supporting Scrimba
 
-Since 2017, we have created over 20 free courses on Scrimba, and we're going to
-continue launching free courses. But to pay our bills, we have to charge once
-in a while. So if you've ever wanted to "give back" to Scrimba, you can do that by buying
-	one of our paid courses
 
-- [Become a professional React developer](https://scrimba.com/course/greact)
-- [The Responsive Web Design Bootcamp](https://scrimba.com/course/gresponsive)
-- [The Ultimate JavaScript Bootcamp](https://scrimba.com/course/gjavascript)
+/**
+* Test Suite 
+*/
+describe('arrayReplace()', () => {
+    it('adds a border around entire application', () => {
+        // arrange
+        const array = [1, 2, 1];
+        const elemToReplace = 1;
+        const substitutionElem = 3;
+        
+        // act
+        const result = arrayReplace(array, elemToReplace, substitutionElem);
 
-	It would also mean the world to us if you share the courses.  
-
-Happy Coding!
+        // log
+        console.log("result: ", result);
+        
+        // assert
+        expect(result).toEqual([3, 2, 3]);
+    });
+});
+```
