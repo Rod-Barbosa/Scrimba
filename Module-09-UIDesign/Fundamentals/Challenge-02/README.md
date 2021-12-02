@@ -1,6 +1,7 @@
 -Before:
 
-![](./before.png)
+![](./before.png)![](./after.png)
+
 -After:
 
-![](./after.png)
+
