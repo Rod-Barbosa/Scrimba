@@ -1,3 +1,7 @@
+WHITE SPACE / ALIGNMENT:
+--------------------------------------------------
+
+
 Solution:
 
 ![](./after.png)
