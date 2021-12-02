@@ -6,4 +6,4 @@ FINAL CHALLENGE:
 
 before: 
 
-![](./before)
+![](./before.png)
