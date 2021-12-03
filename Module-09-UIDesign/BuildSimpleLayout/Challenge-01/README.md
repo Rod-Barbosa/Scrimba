@@ -5,4 +5,4 @@ SOLUTION
 
 Before:
 
-![](./before)
+![](./before.png)
