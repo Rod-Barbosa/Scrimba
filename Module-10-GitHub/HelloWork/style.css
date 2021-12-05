@@ -1,0 +1,36 @@
+body {
+    background-color: #1d2b2b;
+    --main-color: seagreen;
+    --secondary-color: lightgreen;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--main-color);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.reptiles {
+    border: 0.3rem solid var(--secondary-color);
+    border-radius: 1.5rem;
+    background-color: var(--main-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.reptile {
+    padding: 5px;
+    margin: 5px;
+}
+
+.reptile>img {
+    max-height: 300px;
+    height: 300px;
+    max-width: 500px;
+    width: 500px;
+    border-radius: 1.5rem;
+}
