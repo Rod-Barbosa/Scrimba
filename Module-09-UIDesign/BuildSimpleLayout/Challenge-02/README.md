@@ -6,4 +6,5 @@ SOLUTION:
 ![](./solution2.png)
 
 before:
+
 ![](./before.png)
