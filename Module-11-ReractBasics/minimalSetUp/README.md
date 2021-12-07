@@ -1,16 +1,26 @@
-# title(){return this.options.title||this.options.name}
+QUICK REACT SET UP:
+------------
 
-## Supporting Scrimba
+Just add these lines on the head of the document:
 
-Since 2017, we have created over 20 free courses on Scrimba, and we're going to
-continue launching free courses. But to pay our bills, we have to charge once
-in a while. So if you've ever wanted to "give back" to Scrimba, you can do that by buying
-	one of our paid courses
+CDN Links for react and reactDOM:
+```
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+```
 
-- [Become a professional React developer](https://scrimba.com/course/greact)
-- [The Responsive Web Design Bootcamp](https://scrimba.com/course/gresponsive)
-- [The Ultimate JavaScript Bootcamp](https://scrimba.com/course/gjavascript)
+babel to use JSX:
+```
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+```
 
-	It would also mean the world to us if you share the courses.  
+Easy as pie. Just like that you can write an index.js with simple JSX and it will render (sure it will come with a warning but nobody has time for that)
 
-Happy Coding!
+```React
+ReactDOM.render(<ul>
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ul>
+    , document.getElementById("root"))
+```
