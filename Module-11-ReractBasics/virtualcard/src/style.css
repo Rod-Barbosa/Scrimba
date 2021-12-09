@@ -1,0 +1,37 @@
+body {
+    /* background: red; */
+    border: 1px solid magenta;
+    border-radius: 15px;
+    margin: 5vh auto;
+    max-width: 340px;
+    background-color: #23252C;
+}
+header {
+    
+}
+footer {
+    /* background: black; */
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1em;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.avatar-img {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+}
+.contact {
+    background-color: white;
+    text-align: center;
+}
+.about{
+    background: white;
+}
+
+.fontawesome{
+    color: #918E9B;
+    font-size: 2rem;
+}
