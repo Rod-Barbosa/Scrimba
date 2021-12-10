@@ -1,6 +1,6 @@
-# Scrimba Frontend Career Path - (Momentum Chrome Extension - Module 07)
+# Scrimba Frontend Career Path - (Virtual Business Card - Module 11)
 
-This is a solution to the [Scrimba Frontend Career Path - (Module07-APIs/Game of War)](https://scrimba.com/learn/frontend).
+This is a solution to the [Scrimba Frontend Career Path - (Module 11-React/Virtual Business Card)](https://scrimba.com/learn/frontend).
 
 ## Table of contents
 
@@ -21,63 +21,76 @@ This is a solution to the [Scrimba Frontend Career Path - (Module07-APIs/Game of
 
 ### The challenge
 
-Clone of the famous chrome extension "momentum"
+Without any tutorial (no video solution to follow along) I should be able to follow the figma files and create a fully functional React app on my machine, that works as a virtual business card.
 
 After this Challenge I should be able to Code/Understand:
 
-- Clients/Servers
-- Requests/Response
-- JSON
-- fetch/.then()
-- Requests(methods, headers, body, URL)
-- REST API Design (params, query)
-- Async Javascript (callbacks, promises, async/await)
+- React set up
+- Linking CSS on React, Googel fonts on React and FontAwesome Icons on React
+- npm run build
+- Netlify react Deployment
+- Work with Figma
 
 ### Screenshot
 
-![](./imagem.png)
+![](./solution.png)
 
 ### Links
 
-- Solution Github URL: [https://github.com/Rod-Barbosa/momentumClone](https://github.com/Rod-Barbosa/momentumClone)
-- Live Site URL: no live site for chrome extension, jsut download the repo and install on your browser
-
+- Solution Github URL: [https://github.com/Rod-Barbosa/rodrigo-virtual-card](https://github.com/Rod-Barbosa/rodrigo-virtual-card)
+- Live Site URL: [https://rodrigo-virtual-card.netlify.app/](https://rodrigo-virtual-card.netlify.app/)
 ## My process
 
 ### Built with
 
+- React
 - Semantic HTML5 markup
 - CSS custom properties
 - JavaScript
-- Chrome Dev Tools
 
 ### What I learned
 
-This makes the background walways pretty
+Importing fontawesome Icons, one needs to pay attention to solid or brand category:
+
+``` React
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookSquare, faTwitterSquare, faInstagramSquare, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+```
+
+To style them, all you need is to add className and thigns work normally
+down on the code it looks like this:
+```React
+            <FontAwesomeIcon icon={faEnvelopeSquare}/>
+            <br/>
+            <FontAwesomeIcon icon={faFacebookSquare}/>
+```
+
+Google fonts in tact go on the css like this:
+
 ```css
-body {
-    background: no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+</style>
+```
+
+For cropping images with CSS, set the parent container to a fixed height smaller than the image child, and overflow hidden takes care of the rest:
+
+```css
+header {
+    height: 317px;
+    overflow: hidden;
+
+}
+.avatar-img {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+    height: 320px;
 }
 ```
 
-Making letters easier to read on a picture background
-```css
-{
-    text-shadow: 0px 0px 20px #aaaaaa;
-    text-shadow: 1px 1px 2px #474747;
-}
-```
 
-To work with view hight without running into margins forcing scrolling
-```css
-* {
-    box-sizing: border-box;
-}  
-```
 
 ### Continued development
 
@@ -85,9 +98,8 @@ This could go 1000 different directions, but just adding stuff to the screen see
 
 ### Useful resources
 
-- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#getting_the_current_position) - Specially cool to use the lon and lat params
-- [Javascript Clock Updated every second](https://stackoverflow.com/questions/39418405/making-a-live-clock-in-javascript) - setInterval(function, 1000) saves the day once again
-- [Crypto API](https://www.coingecko.com/en/api/documentation) - Coingecko seems overloaded and slow, but it gets the job done
+- [font awesome in React](https://stackoverflow.com/questions/56559772/where-do-i-find-the-object-names-of-icons-in-the-fontawesome-free-packages) - The naming convention is obvious once you know it, but impossible until someone shows it to you
+- [lil trick for cropping images](https://themetry.com/css-image-cropping/) - Not having to go outside of CSS is such a relief
 
 ## Author
 
@@ -97,3 +109,4 @@ This could go 1000 different directions, but just adding stuff to the screen see
 
 ## Acknowledgments
 
+I would like to thank my father who just celebrated his 38th year of marriage with my mom. They showed me a virtual business card from a friend of them and it was the motivation behind taking this exercise seriously
