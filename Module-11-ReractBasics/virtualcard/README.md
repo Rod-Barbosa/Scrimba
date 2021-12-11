@@ -44,9 +44,10 @@ After this Challenge I should be able to Code/Understand:
 ### Built with
 
 - React
-- Semantic HTML5 markup
-- CSS custom properties
-- JavaScript
+- JSX
+- Custom components
+- Styling
+- Static Pages
 
 ### What I learned
 
