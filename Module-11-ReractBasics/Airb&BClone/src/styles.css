@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+img {
+    width: 100%;
+}
+
+.container {
+    width: 550px;
+    margin: 1em auto;
+}
+/* ----------Navbar---------------- */
+.navBar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 20px 36px;
+    
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+.navBar-logo {
+    height: 25.35px;
+    width: 82px;
+}
+/* ---------HeroComponent--------------- */
+.hero-container {
+    border: 1px solid magenta;
+    margin: 1em 3em;
+    display: flex;
+    flex-direction: column;
+}
+.hero-image {
+    border: 1px solid fuchsia;
+    height: 232px;
+    max-width: 395px;
+    align-self: center;
+}
+.hero-container h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+
+}
+.hero-container p {
+    margin-top: 0;
+    font-size: 1rem;
+    max-width: 75%;
+}
