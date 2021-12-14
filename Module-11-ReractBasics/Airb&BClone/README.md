@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# Scrimba Frontend Career Path - (AirB&B Clone - Module 11)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Scrimba Frontend Career Path - (Module11-React Basics/AirB&B Clone)](https://scrimba.com/learn/frontend).
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Clone part of the AirBnB experience website using React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After this Challenge I should be able to Code/Understand:
 
-### `npm run build`
+- React Baisc file structure
+- Consuming JSON data
+- Passing props
+- Conditional Rendering in React
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./solution.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Solution Github URL: [github.com/Rod-Barbosa/AirbnbClone](https://github.com/Rod-Barbosa/AirbnbClone)
+- Live Site URL: [rodrigo-airbnbclone.netlify.app/](https://rodrigo-airbnbclone.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## My process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React
+- JavaScript
+- JSON
+- CSS custom properties
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### What I learned
 
-## Learn More
+Google fonts go on the index.html that sits on the public folder:
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For passing images as props:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```React
+import dataSet from "../data.json"
 
-### Code Splitting
+function App (){
+const eventsArray = dataSet.map(activity=>
+    <Card 
+        img={activity.coverImg}
+        rating={activity.stats.rating}
+        reviewCount={activity.stats.reviewCount}
+        country={activity.location}
+        title={activity.title}
+        price={activity.price}
+    />
+)
+    return (
+        <div className="container">
+            <Navbar />
+            <Hero />
+            {eventsArray}
+        </div>
+```
+Plus this line in the Card component:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```React
+<img src={`../images/${props.img}`}
+```
 
-### Analyzing the Bundle Size
+This is a neat little trick for conditional rendering. Instead of putting the full if statement, I can use && and it works just fine
+```React
+{props.openSpots === 0 && <div className="card--badge">SOLD OUT</div>}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For passing props one can just simply use the spread operator, but must always explicitly declare the key value (in case you are using map function)
 
-### Making a Progressive Web App
+```React
+export default function App() {
+    const cards = data.map(item => {
+        return (
+            <Card
+                key={item.id}
+                {...item}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Continued development
 
-### Advanced Configuration
+This project is one and done. A lot mor eunderstanding about file structure is needed befor eI can comprehend why changing the images folder around has such a breaking/fixing effect. But that will come with more projects
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Useful resources
 
-### Deployment
+- [passing props by spreading the object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_object_literals) - It makes Card Componentit prettier, but makes it harder for human to read
+                  
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Website - [Rodrigo Portfolio](https://www.gelatodigital.com)
+- Frontend Mentor - [@Rod-Barbosa](https://www.frontendmentor.io/profile/Rod-Barbosa)
+- Github - [@Rod-Barbosa](https://github.com/Rod-Barbosa)
 
-### `npm run build` fails to minify
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
