@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.04600b94.chunk.css",
+    "main.js": "/static/js/main.cd42b3ca.chunk.js",
+    "main.js.map": "/static/js/main.cd42b3ca.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.840ea79a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.840ea79a.js.map",
+    "static/js/2.56a20d73.chunk.js": "/static/js/2.56a20d73.chunk.js",
+    "static/js/2.56a20d73.chunk.js.map": "/static/js/2.56a20d73.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.04600b94.chunk.css.map": "/static/css/main.04600b94.chunk.css.map",
+    "static/js/2.56a20d73.chunk.js.LICENSE.txt": "/static/js/2.56a20d73.chunk.js.LICENSE.txt",
+    "static/media/airbnb-logo.e4424517.png": "/static/media/airbnb-logo.e4424517.png",
+    "static/media/photo-grid.294d59b6.png": "/static/media/photo-grid.294d59b6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.840ea79a.js",
+    "static/js/2.56a20d73.chunk.js",
+    "static/css/main.04600b94.chunk.css",
+    "static/js/main.cd42b3ca.chunk.js"
+  ]
+}

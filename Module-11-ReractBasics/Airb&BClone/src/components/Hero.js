@@ -1,8 +1,11 @@
 import React from "react"
 import photoGrid from "../images/photo-grid.png"
+// ../../public/images/airbnb-logo.png
 
 
 function Hero (){
+    
+    
     return (
         <div className="hero-container">
             <img className="hero-image" src={photoGrid} alt="react logo" />
