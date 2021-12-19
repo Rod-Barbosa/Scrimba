@@ -1,4 +1,5 @@
-# title(){return this.options.title||this.options.name}
+![](./solution.png)
+![](./quizz.png)
 
 Quick start:
 
