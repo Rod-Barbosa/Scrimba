@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Scrimba Frontend Career Path - (Meme Generator - Module 11)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Scrimba Frontend Career Path - (Module11-Reactbasics/Meme Generator)](https://scrimba.com/learn/frontend).
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Build a meme generator MVP, using react hooks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After this Challenge I should be able to Code/Understand:
 
-### `npm run build`
+React:
+- Event listeners
+- State
+- Conditional rendering
+- Forms
+- Side effects
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./start.png)
+![](./end.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Solution Github URL: [github.com/Rod-Barbosa/meme-generator](https://github.com/Rod-Barbosa/meme-generator)
+- Live Site URL: [rodrigo-meme-generator.netlify.app/](https://rodrigo-meme-generator.netlify.app/)
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- React Hooks
+- CSS custom properties
+- JavaScript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is the meat nad potatoes of the project. Getting familiar with useSate (instead of writing the same code in componentDidMount and in componentDidUpdate). The construnction via destructuring is very handy here and makes the code look so clean.
+```React
+export default function Meme() {
+    const [meme, setMeme] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg" 
+    })
+    const [allMemes, setAllMemes] = React.useState([])
+```
 
-## Learn More
+Also, handleChange using hte function from useState is always gonna be there in the future. the [name]: value is the reason why the new react is so much better than the old react. The {name, value} is just like the [meme, setMeme] idea from useState. God bless the guy who came up with that.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```React
+function handleChange(event) {
+    const {name, value} = event.target
+    setMeme(prevMeme => ({
+        ...prevMeme,
+        [name]: value
+    }))
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+From inputs tend to not inherit the font family property from body
+also, tex-indent is a nice little trick to avoid doing ::place-holder sudo-class
+```CSS
+.form--input{
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+```
 
-### Code Splitting
+In order to make an API call with Effects Hook all you got to do is put the async function inside another callback function. That way single source of truth is respected. The dependencies array should be empty, because we don't want to be calling the API every time we get one image to display for the user.
+```React
+    React.useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.memes)
+        }
+        getMemes()
+    }, [])
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Continued development
 
-### Analyzing the Bundle Size
+The project doesn't work most of the time, but it is a sufficient MVP. It should remain like that.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Useful resources
 
-### Making a Progressive Web App
+- [Original Figma](https://www.figma.com/file/ddnBbolMmjumqfXXzGKq62/Meme-Generator-(Copy)?node-id=2%3A2) - Always good to have the reference
+- [Make image face the other way](https://www.codegrepper.com/code-examples/css/+make+the+image+to+face+left+to+right+using+css) - transform: scaleX(-1)
+- [React Forms](https://reactjs.org/docs/forms.html) - Basics for React Forms, and why they screw up with single source of truth
+- [React State Hook](https://reactjs.org/docs/hooks-state.html) - ComponentDidMount can blow me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Author
 
-### Advanced Configuration
+- Website - [Rodrigo Portfolio](https://www.gelatodigital.com)
+- Frontend Mentor - [@Rod-Barbosa](https://www.frontendmentor.io/profile/Rod-Barbosa)
+- Github - [@Rod-Barbosa](https://github.com/Rod-Barbosa)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgments
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
