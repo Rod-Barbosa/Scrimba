@@ -1,4 +1,4 @@
-# title(){return this.options.title||this.options.name}
+# title(Dartk Mode React)
 
 Quick start:
 
