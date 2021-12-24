@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# Scrimba Frontend Career Path - (Tenzies - Module 11)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Scrimba Frontend Career Path - (Module11-React/Tenzies Game)](https://scrimba.com/learn/frontend).
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Code the children's game Tenzies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After this Challenge I should be able to Code/Understand:
 
-### `npm run build`
+- React hooks (useEffect(), useState())
+- Conditional reandering
+- 3rd party libraries
+- Pass functions as props
+- useEffect() dependencies array
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./start.png)
+![](./mid.png)
+![](./finish.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Solution Github URL: [https://github.com/Rod-Barbosa/tenzies-game](https://github.com/Rod-Barbosa/tenzies-game)
+- Live Site URL: [https://rodrigo-tenzies-game.netlify.app/](https://rodrigo-tenzies-game.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React
+- nanoId, react-Confetti, 
+- JavaScript
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What I learned
 
-## Learn More
+To simulate the button being pushed down. It isn’t the best for accessibility, but it gives an extra visual queue that things are being clicked.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```CSS
+.roll-dice:focus {
+    outline: none;
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+.roll-dice:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+```
 
-### Code Splitting
+On the App return statement, I used 2 instances of conditional rendering ( ternary operator ? : )
+```React
+    return (
+        <main>
+            {tenzies && <Confetti />}
+            <h1 className="title">Tenzies</h1>
+            <p className="instructions">Roll until all dice are the same. 
+            Click each die to freeze it at its current value between rolls.</p>
+            <div className="dice-container">
+                {diceElements}
+            </div>
+            <button 
+                className="roll-dice" 
+                onClick={rollDice}
+            >
+                {tenzies ? "New Game" : "Roll"}
+            </button>
+        </main>
+    )
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For checking every dice in maintainable way, the array functopm .every(fn) fomes in handy. To check if the game has ended, 2 conditions take advantage of .every() all dice hold the same value and all dice are held.
 
-### Analyzing the Bundle Size
+```React
+    React.useEffect(() => {
+        const allHeld = dice.every(die => die.isHeld)
+        const firstValue = dice[0].value
+        const allSameValue = dice.every(die => die.value === firstValue)
+        if (allHeld && allSameValue) {
+            setTenzies(true)
+        }
+    }, [dice])
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Continued development
 
-### Advanced Configuration
+This game could use a timer, could use a move counter, a winning message,a 2 player display. 1000 different customizations.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Useful resources
 
-### Deployment
+- [Original figma file](https://www.figma.com/file/FqsxRUhAaXM4ezddQK0CdR/Tenzies?node-id=0%3A1) - Always a good reference
+- [Grid-template](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template) - Something si also going on with gap… just saying gap: 1em gives me a “warning”
+- [React Confetti](https://github.com/alampros/react-confetti#readme) - High Production Value = Confetti Rain
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Author
 
-### `npm run build` fails to minify
+- Website - [Rodrigo Portfolio](https://www.gelatodigital.com)
+- Frontend Mentor - [@Rod-Barbosa](https://www.frontendmentor.io/profile/Rod-Barbosa)
+- Github - [@Rod-Barbosa](https://github.com/Rod-Barbosa)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+
