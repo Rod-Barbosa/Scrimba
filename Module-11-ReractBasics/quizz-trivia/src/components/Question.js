@@ -1,49 +1,19 @@
 import React from "react"
 import Answer from "./Answer"
-import {nanoid} from "nanoid"
+// import {nanoid} from "nanoid"
 
 export default function Question(props){
-// console.log(props.answers)
 
-// function allNewQuestions(){
-
-    const answersArray = []
-    for(let answer in  props.answers){
-        // console.log(props.answers[answer])
-        if(props.answers[answer] !== null){
-            answersArray.push(
-                {
-                    id: nanoid(),
-                    answer: props.answers[answer],
-                    isSelected: false
-                }
-                )
-                
-            }
-        }        
-// }
-const [answers, setAnswers] = React.useState(answersArray)
-
-console.log(answers)
-
-function selectAnswer(id) {
-    setAnswers(oldAnswers => oldAnswers.map(answer => {
-        return answer.id === id ? 
-            {...answer, isSelected: !answer.isSelected} :
-            {...answer, isSelected: false}
-    }))
-    console.log(id)
-}
-
-// console.log(answersArray)
-const answersDisplay = answersArray.map(answer=>(
-    <Answer 
-        key={answer.id}
-        answer={answer.answer} 
-        isSelected={answer.isSelected}
-        selectAnswer={() => selectAnswer(answer.id)}
-    />
-))
+    const answersDisplay = props.answers.map(resposta=>(
+        <Answer 
+            key={resposta.id}
+            answer={resposta.answer}
+            id={resposta.id}
+            questionId={props.questionId}
+            toggleSelection={props.toggleSelection}
+        />
+    ))
+    // console.log(answersDisplay)
 
     return (
         <div>
@@ -52,7 +22,6 @@ const answersDisplay = answersArray.map(answer=>(
                 {answersDisplay}
 
             </div>
-            {/* {answersArray} */}
         </div>
     )
 }

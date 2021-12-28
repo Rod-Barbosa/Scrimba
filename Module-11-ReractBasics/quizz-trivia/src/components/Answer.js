@@ -1,14 +1,16 @@
 import React from "react"
 
 export default function Answer(props){
-    const styles = {
-        backgroundColor: props.isSelected ? "#59E391" : "white"
+// console.log(props)
+    function clicked(id, questionId) {
+        console.log(`cliquei aqui ${id} a pergunta é esa: ${questionId}`)
     }
+
     return(
         <button 
             className="answer--button"
-            style={styles}
-            onClick={props.selectAnswer}
+            // onClick={()=>clicked(props.id, props.questionId)}
+            onClick={()=>props.toggleSelection(props.id, props.questionId)}
             >
                 {props.answer}
         </button>
