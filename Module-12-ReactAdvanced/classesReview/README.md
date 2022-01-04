@@ -1,1 +1,1 @@
-Quick Javascript Classes review that covers indirectly what is going on in React Classes
+# Quick Javascript Classes review that covers indirectly what is going on in React Classes.
